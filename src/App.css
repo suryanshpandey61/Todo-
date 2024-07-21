@@ -1,0 +1,25 @@
+
+.grad{
+  background-color: #e710bc;
+background-image: linear-gradient(45deg, #6fe118 0%, #0edae8 100%);
+
+
+}
+.maindiv{
+
+  max-width: 600px;
+  min-height: 400px;
+ 
+  
+  border-color: black;
+  border-width: 1px;
+  border-radius: 10px;
+  width: 50%;
+  top: 70px;
+  background-color: white;
+  left: 400px;
+}
+.gap{
+  justify-content:space-between;
+  
+}
