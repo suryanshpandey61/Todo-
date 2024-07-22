@@ -1,12 +1,33 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Header from './components/Header'
 import InputField from './components/InputField'
 import ListItems from './components/ListItems'
 
 import './App.css'
 
+// globally items chaiye from local storage
+
+const getItemFromLocalStorage = () => {
+
+  // get items fn se value local storage se ate hai 
+  let list = localStorage.getItem('lists');
+
+  if(list){
+    return JSON.parse(localStorage.getItem('lists'))
+  }
+  else{
+    return []
+  }
+
+
+
+}
+
 function App() {
-  const[listtodo,setListTodo]=useState([]);
+
+  // hamara sara data listtodo me save ho rh hai 
+
+  const[listtodo,setListTodo]=useState(getItemFromLocalStorage());
 
   
 
@@ -53,6 +74,11 @@ function App() {
 
    
   // console.log(listtodo);
+
+  // set or save the data into the local storage by using set method
+  useEffect (()=> {
+    localStorage.setItem('lists',JSON.stringify(listtodo))
+  },[listtodo]);
   
 
 
